@@ -12,4 +12,9 @@ class Taller extends CI_Controller {
 	{
 		$this->load->view('primer_vista_view');
 	}
+
+    public function agregar_taller()
+    {
+        $this->load->view('Taller/agregar_taller_view');
+    }
 }
