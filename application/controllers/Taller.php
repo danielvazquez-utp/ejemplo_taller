@@ -31,4 +31,8 @@ class Taller extends CI_Controller {
 	{
 		$this->load->view('Taller/blank_view');
 	}
+	public function blank()
+	{
+		$this->load->view('Taller/nueva_plantilla');
+	}
 }
