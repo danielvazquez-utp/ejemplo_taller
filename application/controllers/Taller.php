@@ -51,6 +51,9 @@ class Taller extends CI_Controller {
 		$this->load->view('Commons/footer_view');
 		$this->load->view('Commons/wrapper_close_view');
 		$this->load->view('Commons/javascript_view');
+		
+		$this->load->view('Taller/form_datatable_view');
+
 		$this->load->view('Commons/body_close_view');
 	}
 }

@@ -75,7 +75,72 @@
                     <button class="btn btn-warning">Cancelar</button>
                 </div>
             </div>
-        </form>  
+        </form> 
+        <div class="card">
+            <div class="card-body card-success">
+                <table class="table table-bordered table-hover table-striped" id="tabla">
+                    <thead>
+                        <tr class="text-center">
+                            <th>No.</th>
+                            <th>Nombre de taller</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr>
+                            <td>1</td>
+                            <td>Taller 1</td>
+                            <td>15-05-2023</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Taller 2</td>
+                            <td>15-05-2023</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Taller 3</td>
+                            <td>15-05-2023</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Taller 4</td>
+                            <td>15-05-2023</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Taller 5</td>
+                            <td>15-05-2023</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Taller 6</td>
+                            <td>15-05-2023</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Taller 7</td>
+                            <td>15-05-2023</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Taller 8</td>
+                            <td>15-05-2023</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Taller 9</td>
+                            <td>15-05-2023</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Taller 10</td>
+                            <td>15-05-2023</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> 
     </section>
     <!-- /.content -->
   </div>
