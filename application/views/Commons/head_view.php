@@ -11,4 +11,10 @@
   <link rel="stylesheet" href="<?php echo base_url('vendor/plugins/fontawesome-free/css/all.min.css')  ?>">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url('vendor/dist/css/adminlte.min.css') ?>">
+
+  <!--Datatable-->
+  <link rel="stylesheet" href="vendor/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="vendor/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="vendor/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
 </head>
