@@ -56,3 +56,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['bienvenida']    = 'Taller/primer_vista';
 $route['agregar']       = 'Taller/agregar_taller';
 $route['name']       = 'Taller/plantilla_nom';
+$route['formulario']       = 'Taller/formulario';
