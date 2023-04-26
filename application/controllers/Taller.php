@@ -36,4 +36,20 @@ class Taller extends CI_Controller {
 	{
 		$this->load->view('Taller/personal_view');
 	}
+	public function formulario()
+	{
+		$this->load->view('Commons/head_view');
+		$this->load->view('Commons/body_open_view');
+		$this->load->view('Commons/wrapper_open_view');
+		$this->load->view('Commons/navbar_view');
+		$this->load->view('Commons/main_side_bar_view');
+
+		//archivo que se modifica para el contenido
+		$this->load->view('Taller/form_view');
+
+		$this->load->view('Commons/footer_view');
+		$this->load->view('Commons/wrapper_close_view');
+		$this->load->view('Commons/javascript_view');
+		$this->load->view('Commons/body_close_view');
+	}
 }
