@@ -17,10 +17,7 @@ class Taller extends CI_Controller {
 		$this->load->view('Taller/index_view');
 	}
 
-	public function primer_vista()
-	{
-		$this->load->view('primer_vista_view');
-	}
+	
 
     public function agregar_taller()
     {
@@ -33,6 +30,6 @@ class Taller extends CI_Controller {
 	}
 
 	public function arlette(){
-		$this->load->view('Taller/arlette_view');
+		$this->load->view('Taller/blank_view');
 	}
 }
