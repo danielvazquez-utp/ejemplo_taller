@@ -31,4 +31,9 @@ class Taller extends CI_Controller {
 	{
 		$this->load->view('Taller/blank_view');
 	}
+
+	public function personaN()
+	{
+		$this->load->view('Taller/newperson_view');
+	}
 }
