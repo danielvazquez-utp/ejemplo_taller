@@ -10,6 +10,9 @@ class Taller extends CI_Controller {
 
 		// Agregar helpers y librerias adicionales al controlador
 		$this->load->helper('url');
+
+		//agregar modelo
+		$this->load->model('General_model');
 	}
 
 	public function index()
@@ -37,6 +40,12 @@ class Taller extends CI_Controller {
 	}
 	public function formulario()
 	{
+
+		$talleres = $this->General_model->get('talleres', array(), array(), '');
+		$data = array(
+			'talleres' => $talleres
+		);
+
 		$this->load->view('Commons/head_view');
 		$this->load->view('Commons/body_open_view');
 		$this->load->view('Commons/wrapper_open_view');
@@ -44,7 +53,7 @@ class Taller extends CI_Controller {
 		$this->load->view('Commons/main_aside_bar-view');
 		// Aqui esta el contenido
 		//$this->load->view('Commons/content_wrapper_view');
-		$this->load->view('Taller/form_view');
+		$this->load->view('Taller/form_view', $data);
 		// Aqui termina el contenido
 		// Aqui agregamos la venatan modal
 		$this->load->view('Taller/form_modal_view');
@@ -57,5 +66,24 @@ class Taller extends CI_Controller {
 		$this->load->view("Taller/form_js_view");
 		$this->load->view('Taller/form_datatable_view');
 		$this->load->view('Commons/body_close_view');
+	}
+
+	public function guardar_formulario(){
+		foreach($_POST as $key => $value)
+		echo "$key = $value <br>";
+
+		$valores= array(
+			'fecha_reg' => date("Y-m-d H:i:s"),
+			'nombre' => $this->input->post('nombre'),
+			'lugar' => $this->input->post('lugar'),
+			'cupo' => $this->input->post('cupo'),
+			'hora' => $this->input->post('hora'),
+			'fecha' => $this->input->post('fecha'),
+			'email' => $this->input->post('contacto'),
+			'cupo' => $this->input->post('cupo'),
+		);
+
+		$this->General_model->set('talleres',$valores);
+		redirect('formulario');
 	}
 }

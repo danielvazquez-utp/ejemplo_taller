@@ -19,7 +19,7 @@
 
   <!-- Main content -->
   <section class="content">
-    <form action="" method="post">
+    <form action="<?php echo base_url('guardar')?>" method="post">
       <div class="card card-success">
         <div class="card-header">
           <h4 class="card-tittle"><i class="fas fa-plus-square"></i> Ejemplo formulario</h4>
@@ -69,7 +69,7 @@
               <div class="form-group">
                 <label for="">trabajas?</label>
                 <input type="radio" name="trabaja" id="trabaja_1" required="required">Si
-                <input type="radio" name="trabaja" id="trabaja_2" required="required">No
+                <input type="radio" name="trabaja" id="trabaja_2" required="required" checkdate="checked">No
               </div>
               <div class="form-group" id="div_donde" style="display: none;">
                 <label for="">Donde trabajas</label>
@@ -101,54 +101,21 @@
             </thead>
             <tbody class="text-center">
               <tr>
-                <td>1</td>
-                <td>Taller 1</td>
-                <td>26-09-21</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Taller 2</td>
-                <td>27-09-21</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Taller 3</td>
-                <td>28-09-21</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Taller 4</td>
-                <td>29-09-21</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Taller 5</td>
-                <td>30-09-21</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>Taller 6</td>
-                <td>31-09-21</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>Taller 7</td>
-                <td>1-10-21</td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>Taller 8</td>
-                <td>2-10-21</td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td>Taller 9</td>
-                <td>3-10-21</td>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td>Taller 10</td>
-                <td>4-10-21</td>
+                <?php 
+                if($talleres !=false){
+                  foreach($talleres->result() as $taller){
+                    ?>
+                    <tr>
+                    <td><?php echo $taller->id_taller?></td>
+                    <td><?php echo $taller->nombre?></td>
+                    <td><?php echo $taller->fecha?></td>
+                  </tr>
+                    <?php
+                  }
+                  ?>
+                  <?php
+                }
+                ?>
               </tr>
             </tbody>
             <tfoot></tfoot>
