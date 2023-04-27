@@ -18,12 +18,17 @@
 
     <!-- Main content -->
     <section class="content">
-        <form action="">
-            <div class="card card-success">
+        <form action="<?php echo base_url('save_form')?>" method="post">
+            <div class="card card-success collapsed-card">
                 <div class="card-header">
                     <h4 class="card-title">
-                        Ejemplo de formulario
+                        <i class="fas fa-plus-circle"></i>
+                        Agregar Taller
                     </h4>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+                        </button>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -38,7 +43,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Cupo de taller</label>
-                                <input class="form-control" type="number" name="correo" id="correo" placeholder="0" min="1" max="100" required="required">
+                                <input class="form-control" type="number" name="cupo" id="cupo" placeholder="0" min="1" max="100" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="">Hora del taller</label>
@@ -61,10 +66,20 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="">Correo de contacto</label>
-                                <input class="form-control" type="email" name="correo" id="correo" required="required">
+                                <label for="">Correo</label>
+                                <input class="form-control" type="email" name="email" id="email" placeholder="Escriba aqui" required="required">
                             </div>
-                            
+                            <div class="form-group">
+                                <label for="">¿Trabajas?</label>
+                                <input type="radio" name="trabaja" id="trabaja_1" required="required"> Si
+                                <input type="radio" name="trabaja" id="trabaja_2" required="required" checked> No
+                            </div>
+                            <div class="form-group" id="div_trabaja" style="display:none;">
+                                <label for="">Donde trabajas</label>
+                                <input class="form-control" type="text" name="donde" id="donde" placeholder="Escriba aqui">
+                            </div>
+
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">Ver ventana modal</button>
                         
                         </div>
                     </div>
@@ -76,6 +91,7 @@
                 </div>
             </div>
         </form> 
+        </div>
         <div class="card">
             <div class="card-body card-success">
                 <table class="table table-bordered table-hover table-striped" id="tabla">
@@ -87,56 +103,22 @@
                         </tr>
                     </thead>
                     <tbody class="text-center">
-                        <tr>
-                            <td>1</td>
-                            <td>Taller 1</td>
-                            <td>15-05-2023</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Taller 2</td>
-                            <td>15-05-2023</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Taller 3</td>
-                            <td>15-05-2023</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Taller 4</td>
-                            <td>15-05-2023</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Taller 5</td>
-                            <td>15-05-2023</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Taller 6</td>
-                            <td>15-05-2023</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Taller 7</td>
-                            <td>15-05-2023</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Taller 8</td>
-                            <td>15-05-2023</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Taller 9</td>
-                            <td>15-05-2023</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Taller 10</td>
-                            <td>15-05-2023</td>
-                        </tr>
+                        <?php
+                            if($talleres!=false){
+                                foreach ($talleres->result() as $taller) {
+                        ?>
+
+                            <tr>
+                                <td><?php echo $taller->id_taller?></td>
+                                <td><?php echo $taller->nombre?></td>
+                                <td><?php echo $taller->fecha?></td>
+                            </tr>
+
+                        <?php
+                                }
+                            }
+                        ?>
+                       
                     </tbody>
                 </table>
             </div>
