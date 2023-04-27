@@ -20,7 +20,7 @@
   <!-- Main content -->
   <section class="content">
     <!--Inicia Formulario -->
-    <form action="">
+    <form action="<?php echo base_url('save_form')?>" method="post">
     <!-- Default box -->
     <div class="card card-success collapsed-card">
         <div class="card-header">
@@ -82,7 +82,7 @@
                     <div class="form-group">
                         <label for="">¿Trabaja?</label>
                         <input type="radio" name="trabaja" id="trabaja_1" required="required">Si
-                        <input type="radio" name="trabaja" id="trabaja_2" required="required">No
+                        <input type="radio" name="trabaja" id="trabaja_2" required="required " checked="cheked" >No
                     </div>
                     <div class="form-group" id="div_trabaja" style="display:none;">
                         <label for="">Donde trabajas?</label><br>
@@ -119,56 +119,18 @@
                     <th>Fecha</th>
                 </thead>
                 <tbody class="text-center">
+                    <?php if($talleres!=false){
+                        foreach ($talleres->result() as $taller){
+                        ?>
                     <tr>
-                        <td>1</td>
-                        <td>Taller 1</td>
-                        <td>15-05-2023</td>
+                        <td><?php echo $taller->id_taller?></td>
+                        <td><?php echo $taller->nombre?></td>
+                        <td><?php echo $taller->fecha?></td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Taller 2</td>
-                        <td>15-05-2023</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Taller 3</td>
-                        <td>15-05-2023</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Taller 4</td>
-                        <td>15-05-2023</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Taller 5</td>
-                        <td>15-05-2023</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Taller 6</td>
-                        <td>15-05-2023</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Taller 7</td>
-                        <td>15-05-2023</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Taller 8</td>
-                        <td>15-05-2023</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>Taller 9</td>
-                        <td>15-05-2023</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>Taller 10</td>
-                        <td>15-05-2023</td>
-                    </tr>
+                    <?php
+                        }
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>
