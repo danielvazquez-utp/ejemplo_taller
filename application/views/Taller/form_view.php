@@ -22,9 +22,15 @@
     <!--Inicia Formulario -->
     <form action="">
     <!-- Default box -->
-    <div class="card card-success">
+    <div class="card card-success collapsed-card">
         <div class="card-header">
-            <h2 class="card-title">Ejemplo de formulario</h2>
+            <h2 class="card-title">
+            <i class="fas fa-plus-square">
+            Agregar Curso
+            </i>
+            </h2>
+            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+            </button>
         </div>
         <div class="card-body">
 
@@ -45,15 +51,16 @@
                         <label for="">Horario:</label>
                         <input type="time" name="hora" id="hora" class="form-control" required="required">
                     </div>
-                </div>
-
-            <!-- Columna 2 -->    
-            <div class="col-xs-12 col-md-12 col-lg-6">
                     <div class="form-group">
                         <label for="">Cupo del taller</label>
                         <input type="number" name="cupo" id="cupo" class="form-control" min="1" max="100"
                         placeholder="1" required="required">
                     </div>
+                </div>
+
+            <!-- Columna 2 -->    
+            <div class="col-xs-12 col-md-12 col-lg-6">
+                    
                     <div class="form-group">
                         <label for="">Fecha:</label>
                         <input type="date" name="fecha" id="fecha" class="form-control" required="required">
@@ -72,7 +79,18 @@
                         <input type="email" name="contacto" id="contacto" 
                         class="form-control" placeholder="Correo electronico" required="required">
                     </div>
-                
+                    <div class="form-group">
+                        <label for="">¿Trabaja?</label>
+                        <input type="radio" name="trabaja" id="trabaja_1" required="required">Si
+                        <input type="radio" name="trabaja" id="trabaja_2" required="required">No
+                    </div>
+                    <div class="form-group" id="div_trabaja" style="display:none;">
+                        <label for="">Donde trabajas?</label><br>
+                        <input type="text" name="donde" id="donde" class="form-control" placeholder="Escribe aquí">
+                    </div>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                        Ventana Modal
+                    </button>
             </div>
 
         <!--Cierre del body del card -->   
@@ -85,8 +103,14 @@
     <!-- /.card -->
     </form>
     <!-- Finaliza el formulario -->
+</div>
 
-    <div class="card">
+    <div class="card card-success">
+        <div class="card-header">
+            <h2 class="card-title ">
+                Cursos Registrados
+            </h2>
+        </div>
         <div class="card-body">
             <table class="table table-bordered table-hover table-striped" id="tabla">
                 <thead class="text-center">

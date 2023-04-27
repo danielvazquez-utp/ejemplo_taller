@@ -46,6 +46,8 @@ class Taller extends CI_Controller {
 
 		//archivo que se modifica para el contenido
 		$this->load->view('Taller/form_view');
+		//vista del modal
+		$this->load->view('Taller/form_modal_view');
 
 		$this->load->view('Commons/footer_view');
 		$this->load->view('Commons/wrapper_close_view');
@@ -53,7 +55,7 @@ class Taller extends CI_Controller {
 
 		//hoja de datable
 		$this->load->view('Taller/form_datatable_view');
-
+		$this->load->view('Taller/form_js_view');
 		$this->load->view('Commons/body_close_view');
 	}
 }
