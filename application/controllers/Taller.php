@@ -48,12 +48,16 @@ class Taller extends CI_Controller {
 		// Aquí va el contenido
 		$this->load->view('Taller/form_view');
 		//$this->load->view('Commons/content_wrapper_view');
+		// Aquí agregamos ventana modal
+		$this->load->view('Taller/form_modal_view');
 
 		$this->load->view('Commons/footer_view');
 		$this->load->view('Commons/wrapper_close_view');
 		$this->load->view('Commons/javascript_view');
 
+		// Aquí mi javascript
 		$this->load->view('Taller/form_datatable_view');
+		$this->load->view('Taller/form_js_view');
 		
 		$this->load->view('Commons/body_close_view');
 	}
