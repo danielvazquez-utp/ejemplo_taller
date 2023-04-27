@@ -22,7 +22,12 @@
     <form action="" method="post">
       <div class="card card-success">
         <div class="card-header">
-          <h4 class="card-tittle">Ejemplo formulario</h4>
+          <h4 class="card-tittle"><i class="fas fa-plus-square"></i> Ejemplo formulario</h4>
+          <!--<div class="card-tools">
+            <div>
+              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas-fa-plus"></i></button>
+            </div>
+          </div>-->
         </div>
         <div class="card-body">
           <div class="row">
@@ -61,6 +66,18 @@
                 <label for="">Correo de contacto</label>
                 <input type="email" name="contacto" id="contacto" class="form-control" required="required">
               </div>
+              <div class="form-group">
+                <label for="">trabajas?</label>
+                <input type="radio" name="trabaja" id="trabaja_1" required="required">Si
+                <input type="radio" name="trabaja" id="trabaja_2" required="required">No
+              </div>
+              <div class="form-group" id="div_donde" style="display: none;">
+                <label for="">Donde trabajas</label>
+                <input type="text" name="donde" id="donde" class="form-control" placeholder="Escribra aqui">
+              </div>
+              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                Ventana Modal
+              </button>
             </div>
           </div>
         </div>
@@ -69,7 +86,10 @@
           <button class="btn btn-warning" type="submit">Cancelar</button>
         </div>
       </div>
-      <div class="card">
+      <div class="card card-success">
+        <div class="card-header">
+          <h4 class="card-tittle">Titulo de la tabla</h4>
+        </div>
         <div class="card-body">
           <table class="table table-bordered table-hover table-striped" id="tabla">
             <thead>
