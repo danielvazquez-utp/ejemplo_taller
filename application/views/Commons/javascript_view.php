@@ -4,6 +4,7 @@
 <script src="<?php echo base_url('vendor/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url('vendor/dist/js/adminlte.min.js') ?>"></script>
+<script src="<?php echo base_url('vendor/dist/js/adminlte.min.js') ?>"></script>
 
 <!-- Datatable -->
 <script src="<?php echo base_url('vendor/plugins/datatables/jquery.dataTables.min.js') ?>"></script>
