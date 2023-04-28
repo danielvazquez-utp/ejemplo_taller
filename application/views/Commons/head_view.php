@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,8 +11,10 @@
   <link rel="stylesheet" href="<?php echo base_url('vendor/plugins/fontawesome-free/css/all.min.css')  ?>">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url('vendor/dist/css/adminlte.min.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('vendor/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')?>">
-<link rel="stylesheet" href="<? php echo base_url('vendor/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')?>">
-<link rel="stylesheet" href="<?php echo base_url('vendor/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')?>">
+
+  <!-- Datatable -->
+  <link rel="stylesheet" href="<?php echo base_url('vendor/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') ?>">
+  <link rel="stylesheet" href="<?php echo base_url('vendor/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') ?>">
+  <link rel="stylesheet" href="<?php echo base_url('vendor/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') ?>">
 
 </head>
