@@ -41,10 +41,11 @@ class Taller extends CI_Controller {
 
 	public function formulario()
 	{
+		$edicion = $this->uri->segment(2, 0);
 		$talleres = $this->General_model->get('talleres', array(), array(), '');
-
 		$data 	= array(
 			'talleres'	=>	$talleres,
+			'edicion'	=>	$edicion,
 		);
 
 		$this->load->view('Commons/head_view');
@@ -65,6 +66,7 @@ class Taller extends CI_Controller {
 
 		// Aquí mi javascript
 		$this->load->view('Taller/form_datatable_view');
+		$this->load->view('Taller/form_sa_view');
 		$this->load->view('Taller/form_js_view');
 		
 		$this->load->view('Commons/body_close_view');
@@ -88,6 +90,17 @@ class Taller extends CI_Controller {
 		);
 
 		$this->General_model->set('talleres', $valores);
-		redirect(base_url('formulario'));
+		redirect(base_url('formulario/1'));
+	}
+
+	public function borrar_taller()
+	{
+		$id_taller = $this->uri->segment(2);
+		//echo $id_taller;
+		$valores = array(
+			'id_taller'	=>	$id_taller,
+		);
+		$this->General_model->delete('talleres', $valores);
+		redirect(base_url('formulario/2'));
 	}
 }

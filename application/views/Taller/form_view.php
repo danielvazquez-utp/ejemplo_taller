@@ -105,6 +105,7 @@
                 <th>No.</th>
                 <th>Nombre de taller</th>
                 <th>Fecha</th>
+                <th>Opciones</th>
               </tr>
             </thead>
             <tbody class="text-center">
@@ -116,6 +117,14 @@
                     <td><?php echo $taller->id_taller ?></td>
                     <td><?php echo $taller->nombre ?></td>
                     <td><?php echo $taller->fecha ?></td>
+                    <td>
+                      <a href="" title="Editar taller" class="">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a href="<?php echo base_url('borrar/'.$taller->id_taller) ?>" title="Borrar taller" class="btn-borrar" data-name="<?php echo $taller->nombre ?>">
+                        <i class="fas fa-trash"></i>
+                      </a>
+                    </td>
                   </tr>
                   <?php
                 }
