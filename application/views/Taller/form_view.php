@@ -70,7 +70,7 @@
               <div class="form-group">
                 <label for="">trabajas?</label>
                 <input type="radio" name="trabaja" id="trabaja_1" required="required">Si
-                <input type="radio" name="trabaja" id="trabaja_2" required="required" checkdate="checked">No
+                <input type="radio" name="trabaja" id="trabaja_2" required="required" checked="checked">No
               </div>
               <div class="form-group" id="div_donde" style="display: none;">
                 <label for="">Donde trabajas</label>

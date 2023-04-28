@@ -84,6 +84,6 @@ class Taller extends CI_Controller {
 		);
 
 		$this->General_model->set('talleres',$valores);
-		redirect('formulario');
+		redirect(base_url('formulario'));
 	}
 }
