@@ -29,11 +29,6 @@ class Taller extends CI_Controller {
         $this->load->view('Taller/agregar_taller_view');
     }
 
-	public function plantilla()
-	{
-		$this->load->view('Taller/blank_view');
-	}
-
 	public function personal()
 	{
 		$this->load->view('Taller/personal_view');
@@ -49,7 +44,7 @@ class Taller extends CI_Controller {
 
 		$this->load->view('Commons/head_view');
 		$this->load->view('Commons/body_open_view');
-		$this->load->view('Commons/wrapper_open_view');
+		$this->load->view('Commons/wraper_open_view');
 		$this->load->view('Commons/navbar_view');
 		$this->load->view('Commons/main_sidebar_view');
 
@@ -60,7 +55,7 @@ class Taller extends CI_Controller {
 		$this->load->view('Taller/form_modal_view');
 
 		$this->load->view('Commons/footer_view');
-		$this->load->view('Commons/wrapper_close_view');
+		$this->load->view('Commons/wraper_close_view');
 		$this->load->view('Commons/javascript_view');
 
 		// Aquí mi javascript
