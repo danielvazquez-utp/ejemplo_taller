@@ -53,6 +53,6 @@ $route['default_controller'] = 'taller';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['bienvenida']    = 'Taller/arlette';
+/*$route['bienvenida']    = 'Taller/arlette';*/
 $route['ejemplo']    = 'Taller/formulario';
-$route['agregar']       = 'Taller/agregar_taller';
+$route['guardar']       = 'Taller/guardar_formulario';
