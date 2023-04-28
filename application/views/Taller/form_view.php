@@ -20,7 +20,7 @@
     <!-- Main content -->
     <section class="content">
       <form action="<?php echo base_url('guardar')  ?>" method="post">
-        <div class="card card-success collapsed-card">
+        <div class="card card-success ">
           <div class="card-header">
             <h4 class="card-title">
               <i class="fas fa-plus-circle"></i> 
