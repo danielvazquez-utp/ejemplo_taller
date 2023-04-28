@@ -22,13 +22,14 @@
     <form action="<?php echo base_url('guardar')?>" method="post">
       <div class="card card-success">
         <div class="card-header">
-          <h4 class="card-tittle"><i class="fas fa-plus-square"></i> Ejemplo formulario</h4>
-          <!--<div class="card-tools">
-            <div>
-              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas-fa-plus"></i></button>
+            <h4 class="card-title">
+              <i class="fas fa-plus-circle"></i> 
+              Agregar taller
+            </h4>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
             </div>
-          </div>-->
-        </div>
+          </div>
         <div class="card-body">
           <div class="row">
             <div class="col-xs-12 col-md-12 col-lg-6">
