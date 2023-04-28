@@ -20,7 +20,7 @@
     <!-- Main content -->
     <section class="content">
       <form action="<?php echo base_url('guardar')  ?>" method="post">
-      <div class="card card-success collapsed-card">
+        <div class="card card-success card-collapse">
           <div class="card-header">
             <h4 class="card-title">
               <i class="fas fa-plus-circle"></i> 
@@ -72,7 +72,7 @@
                 <div class="form-group">
                   <label for="">¿Trabajas?</label>
                   <input type="radio" name="trabaja" id="trabaja_1" required="required"> Si
-                  <input type="radio" name="trabaja" id="trabaja_2" required="required"> No
+                  <input type="radio" name="trabaja" id="trabaja_2" required="required" checked="checked"> No
                 </div>
                 <div class="form-group" id="div_trabaja" style="display:none;">
                   <label for="">¿Dónde trabajas?</label>
