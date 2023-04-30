@@ -690,7 +690,7 @@
               <li class="nav-item">
                 <a href="../examples/blank.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Blank Page</p>
+                  <p>Paulo Daniel</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -835,7 +835,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Arlette Pérez</h1>
+            <h1>Paulo Daniel</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
