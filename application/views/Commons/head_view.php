@@ -14,4 +14,7 @@
   <link rel="stylesheet" href="<?php echo base_url('vendor/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')?>">
   <link rel="stylesheet" href="<?php echo base_url('vendor/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')?>">
   <link rel="stylesheet" href="<?php echo base_url('vendor/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')?>">
+
+  <!-- Sweet Alerts 2 -->
+  <link rel="stylesheet" href="<?php echo base_url('vendor/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') ?>">
 </head>
