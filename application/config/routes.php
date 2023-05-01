@@ -57,3 +57,5 @@ $route['bienvenida']    = 'Taller/primer_vista';
 $route['agregar']       = 'Taller/agregar_taller';
 $route['formulario']       = 'Taller/formulario';
 $route['guardar'] = 'Taller/guardar_formulario';
+$route['formulario/(:num)']  = 'Taller/formulario';
+$route['borrar/(:any)'] = 'Taller/borrar_taller';
