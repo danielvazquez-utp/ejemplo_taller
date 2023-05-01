@@ -16,3 +16,6 @@
 <script src="vendor/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="vendor/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="vendor/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+<!--Sweetalert-2 -->
+<script src="vendor/plugins/sweetalert2/sweetalert2.min.js"></script>

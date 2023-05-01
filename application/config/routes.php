@@ -56,4 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['bienvenida']    = 'Taller/primer_vista';
 $route['agregar']       = 'Taller/agregar_taller';
 $route['form']       = 'Taller/formulario';
+$route['form/(:num)']       = 'Taller/formulario';
 $route['save_form']       = 'Taller/guardar_formulario';
+$route['delete']       = 'Taller/borrar_taller';
+$route['delete/(:any)']       = 'Taller/borrar_taller';

@@ -11,5 +11,16 @@
             $("#div_trabaja").hide(300);
             $("#donde").removeAttr('required');
        });
+
+       //Mensaje de confirmación
+       $('.btn-borrar').on('click', function(){
+        //alert('Presionaste el boton para borrar');
+        const name = $(this).attr('data-name');
+        if(confirm("¿Deseas borar el taller " + name + "?")){
+            return true;
+        }else{
+            return false;
+        }
+       });
     })
 </script>

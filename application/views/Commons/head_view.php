@@ -17,4 +17,6 @@
   <link rel="stylesheet" href="vendor/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="vendor/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
+  <!-- Sweetalerts-2-->
+  <link rel="stylesheet" href="vendor/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 </head>
