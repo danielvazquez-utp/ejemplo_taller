@@ -11,6 +11,9 @@
                 case 2:
                     mensaje = "Taller eliminado";
                     break;
+                case 3:
+                    mensaje = "Taller actualizado";
+                    break;
             }
             //alert(edicion);
             Swal.fire({

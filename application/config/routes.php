@@ -59,3 +59,5 @@ $route['formulario']    = 'Taller/formulario';
 $route['formulario/(:num)']  = 'Taller/formulario';
 $route['guardar']       = 'Taller/guardar_formulario';
 $route['borrar/(:any)'] = 'Taller/borrar_taller';
+$route['actualizar/(:any)'] = 'Taller/actualizar_taller';
+$route['actualiza']     = 'Taller/actualiza_taller';
