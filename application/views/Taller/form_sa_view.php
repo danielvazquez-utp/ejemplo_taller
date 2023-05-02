@@ -1,9 +1,9 @@
 <script>
-    $(function(){
+    $(function() {
 
         const edicion = <?php echo $edicion ?>;
         let mensaje = '';
-        if (edicion>0) {
+        if (edicion > 0) {
             switch (edicion) {
                 case 1:
                     mensaje = "Taller agregado";
@@ -11,14 +11,17 @@
                 case 2:
                     mensaje = "Taller eliminado";
                     break;
+                case 3:
+                    mensaje = "Taller actualizado";
+                    break;
             }
             //alert(edicion);
             Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: mensaje,
-            showConfirmButton: false,
-            timer: 1500
+                position: 'center',
+                icon: 'success',
+                title: mensaje,
+                showConfirmButton: false,
+                timer: 1500
             })
         }
 

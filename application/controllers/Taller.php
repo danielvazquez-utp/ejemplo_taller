@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Taller extends CI_Controller {
@@ -100,5 +101,52 @@ class Taller extends CI_Controller {
 		);
 		$this->General_model->delete('talleres', $valores);
 		redirect(base_url('formulario/2'));
+	}
+
+	public function actualizar_taller()
+	{
+		$id = $this->uri->segment(2, 0);
+		$talleres = $this->General_model->get('talleres', array('id_taller'=>$id), array(), '');
+		// $taller = false;
+		// if($talleres!=false){
+		// 	$taller = $talleres->row(0);
+		// }
+		$taller = ($talleres!=false)? $talleres->row(0) : false;
+		$data 	= array(
+			'taller'	=>	$taller,
+		);
+
+		$this->load->view('Commons/head_view');
+		$this->load->view('Commons/body_open_view');
+		$this->load->view('Commons/wrapper_open_view');
+		$this->load->view('Commons/navbar_view');
+		$this->load->view('Commons/main_aside_bar-view');
+
+		// Aquí va el contenido
+		$this->load->view('Taller/actualizar_view', $data);
+
+		$this->load->view('Commons/footer_view');
+		$this->load->view('Commons/wrapper_close_view');
+		$this->load->view('Commons/javascript_view');
+
+		// Aquí mi javascript
+
+		$this->load->view('Commons/body_close_view');
+	}
+
+	public function actualiza_taller()
+	{
+		$valores = array(
+			'nombre'	=>	$this->input->post('nombre'),
+			'tipo'		=>	$this->input->post('tipo'),
+			'lugar'		=>	$this->input->post('lugar'),
+			'hora'		=>	$this->input->post('hora'),
+			'fecha'		=>	$this->input->post('fecha'),
+			'email'		=>	$this->input->post('correo'),
+			'cupo'		=>	$this->input->post('cupo'),
+		);
+
+		$this->General_model->update('talleres', array('id_taller'=>$this->input->post('id')), $valores);
+		redirect(base_url('formulario/3'));
 	}
 }

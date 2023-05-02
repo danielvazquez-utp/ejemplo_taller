@@ -19,17 +19,17 @@
 
   <!-- Main content -->
   <section class="content">
-    <form action="<?php echo base_url('guardar')?>" method="post">
+    <form action="<?php echo base_url('guardar') ?>" method="post">
       <div class="card card-success">
         <div class="card-header">
-            <h4 class="card-title">
-              <i class="fas fa-plus-circle"></i> 
-              Agregar taller
-            </h4>
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-            </div>
+          <h4 class="card-title">
+            <i class="fas fa-plus-circle"></i>
+            Agregar taller
+          </h4>
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
           </div>
+        </div>
         <div class="card-body">
           <div class="row">
             <div class="col-xs-12 col-md-12 col-lg-6">
@@ -103,30 +103,33 @@
             </thead>
             <tbody class="text-center">
               <tr>
-                <?php 
-                if($talleres !=false){
-                  foreach($talleres->result() as $taller){
-                    ?>
-                    <tr>
-                    <td><?php echo $taller->id_taller?></td>
-                    <td><?php echo $taller->nombre?></td>
-                    <td><?php echo $taller->fecha?></td>
-                    <td>
-                      <a href="" title="Editar taller" class="">
-                        <i class="fas fa-edit"></i>
-                      </a>
-                      <a href="<?php echo base_url('borrar/'.$taller->id_taller) ?>" title="Borrar taller" class="btn-borrar" data-name="<?php echo $taller->nombre ?>">
-                        <i class="fas fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                    <?php
-                  }
-                  ?>
-                  <?php
-                }
+                <?php
+                if ($talleres != false) {
+                  foreach ($talleres->result() as $taller) {
                 ?>
+              <tr>
+                <td><?php echo $taller->id_taller ?></td>
+                <td><?php echo $taller->nombre ?></td>
+                <td><?php echo $taller->fecha ?></td>
+                <td>
+                  <a href="<?php echo base_url('actualizar/' . $taller->id_taller) ?>" title="Actualizar taller" class="">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <a href="<?php echo base_url('borrar/' . $taller->id_taller) ?>" title="Borrar taller" class="btn-borrar" data-name="<?php echo $taller->nombre ?>">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                  <a href="" title="Actualizar taller" class="btn-actualizar" data-id="<?php echo $taller->id_taller ?>" data-toggle="modal" data-target="#modal-default">
+                    <i class="fas fa-edit text-purple"></i>
+                  </a>
+                </td>
               </tr>
+            <?php
+                  }
+            ?>
+          <?php
+                }
+          ?>
+          </tr>
             </tbody>
             <tfoot></tfoot>
           </table>
