@@ -61,3 +61,5 @@ $route['formulario/(:num)']  = 'Taller/formulario';
 $route['borrar/(:any)'] = 'Taller/borrar_taller';
 $route['actualizar/(:any)'] = 'Taller/actualizar_taller';
 $route['actualiza']     = 'Taller/actualiza_taller';
+$route['recupera_taller'] = 'Taller/recupera_taller';
+$route['actualiza_taller']= 'Taller/actualiza_taller_asincrona';
