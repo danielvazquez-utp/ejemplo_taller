@@ -118,11 +118,14 @@
                     <td><?php echo $taller->nombre ?></td>
                     <td><?php echo $taller->fecha ?></td>
                     <td>
-                      <a href="" title="Editar taller" class="">
+                      <a href="<?php echo base_url('actualizar/'.$taller->id_taller) ?>" title="Actualizar taller" class="">
                         <i class="fas fa-edit"></i>
                       </a>
                       <a href="<?php echo base_url('borrar/'.$taller->id_taller) ?>" title="Borrar taller" class="btn-borrar" data-name="<?php echo $taller->nombre ?>">
                         <i class="fas fa-trash"></i>
+                      </a>
+                      <a href="" title="Actualizar taller" class="btn-actualizar" data-id="<?php echo $taller->id_taller ?>" data-toggle="modal" data-target="#modal-default">
+                        <i class="fas fa-edit text-purple"></i>
                       </a>
                     </td>
                   </tr>

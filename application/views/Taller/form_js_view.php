@@ -26,6 +26,22 @@
             }
         });
 
+        $('.btn-actualizar').on('click', function(){
+            const id = $(this).attr('data-id');
+            alert(id);
+            const datos = {
+                'id_taller' : id,
+            }
+            $.ajax({
+                type: 'POST',
+                url: '<?php base_url('recupera_taller') ?>',
+                data: datos,
+                success: function( data ){
+                    alert('Datos actualizados');
+                }
+            })
+        });
+
     })
 
 </script>
