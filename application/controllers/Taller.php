@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Taller extends CI_Controller {
@@ -10,7 +11,7 @@ class Taller extends CI_Controller {
 
 		// Agregar helpers y librerias adicionales al controlador
 		$this->load->helper('url');
-		//agregar modelos
+		// Agregar modelo
 		$this->load->model('General_model');
 	}
 
@@ -38,14 +39,14 @@ class Taller extends CI_Controller {
 	{
 		$this->load->view('Taller/personal_view');
 	}
+
 	public function formulario()
 	{
 		$edicion = $this->uri->segment(2, 0);
 		$talleres = $this->General_model->get('talleres', array(), array(), '');
-
-		$data = array(
-			'talleres' => $talleres,
-			'edicion'  => $edicion,
+		$data 	= array(
+			'talleres'	=>	$talleres,
+			'edicion'	=>	$edicion,
 		);
 
 		$this->load->view('Commons/head_view');
@@ -54,49 +55,122 @@ class Taller extends CI_Controller {
 		$this->load->view('Commons/navbar_view');
 		$this->load->view('Commons/main_side_bar_view');
 
-		//archivo que se modifica para el contenido
+		// Aquí va el contenido
 		$this->load->view('Taller/form_view', $data);
-		//vista del modal
+		//$this->load->view('Commons/content_wrapper_view');
+		// Aquí agregamos ventana modal
 		$this->load->view('Taller/form_modal_view');
 
 		$this->load->view('Commons/footer_view');
 		$this->load->view('Commons/wrapper_close_view');
 		$this->load->view('Commons/javascript_view');
 
-		//hoja de datable
+		// Aquí mi javascript
 		$this->load->view('Taller/form_datatable_view');
-		$this->load->view('Taller/form_js_view');
 		$this->load->view('Taller/form_sa_view');
+		$this->load->view('Taller/form_js_view');
+		
 		$this->load->view('Commons/body_close_view');
 	}
 
-	public function guardar_formulario(){
-		foreach($_POST as $key => $value){
+	public function guardar_formulario()
+	{
+		foreach ($_POST as $key => $value) {
 			echo "$key = $value <br>";
 		}
+
 		$valores = array(
-			'nombre' => $this->input->post('nombre'),
-			'lugar' =>$this->input->post('lugar'),
-			'cupo' =>$this->input->post('cupo'),
-			'hora' =>$this->input->post('hora'),
-			'fecha' =>$this->input->post('fecha'),
-			'tipo' =>$this->input->post('tipo'),
-			'email' =>$this->input->post('contacto'),
-			'fecha_reg' => date("Y-m-d H:i:s"),
+			'fecha_reg'	=>	date("Y-m-d H:i:s"),
+			'nombre'	=>	$this->input->post('nombre'),
+			'tipo'		=>	$this->input->post('tipo'),
+			'lugar'		=>	$this->input->post('lugar'),
+			'hora'		=>	$this->input->post('hora'),
+			'fecha'		=>	$this->input->post('fecha'),
+			'email'		=>	$this->input->post('correo'),
+			'cupo'		=>	$this->input->post('cupo'),
 		);
 
 		$this->General_model->set('talleres', $valores);
-		redirect (base_url('form/1'));
+		redirect(base_url('formulario/1'));
 	}
 
-	public function borrar_taller(){
+	public function borrar_taller()
+	{
+		$id_taller = $this->uri->segment(2);
+		//echo $id_taller;
+		$valores = array(
+			'id_taller'	=>	$id_taller,
+		);
+		$this->General_model->delete('talleres', $valores);
+		redirect(base_url('formulario/2'));
+	}
 
-		$id_taller=$this->uri->segment(2);
-		$valores= array(
-			'id_taller' => $id_taller,
+	public function actualizar_taller()
+	{
+		$id = $this->uri->segment(2, 0);
+		$talleres = $this->General_model->get('talleres', array('id_taller'=>$id), array(), '');
+		// $taller = false;
+		// if($talleres!=false){
+		// 	$taller = $talleres->row(0);
+		// }
+		$taller = ($talleres!=false)? $talleres->row(0) : false;
+		$data 	= array(
+			'taller'	=>	$taller,
 		);
 
-		$this->General_model->delete('talleres', $valores);
-		redirect (base_url('form/2'));
+		$this->load->view('Commons/head_view');
+		$this->load->view('Commons/body_open_view');
+		$this->load->view('Commons/wrapper_open_view');
+		$this->load->view('Commons/navbar_view');
+		$this->load->view('Commons/main_side_bar_view');
+
+		// Aquí va el contenido
+		$this->load->view('Taller/actualizar_view', $data);
+
+		$this->load->view('Commons/footer_view');
+		$this->load->view('Commons/wrapper_close_view');
+		$this->load->view('Commons/javascript_view');
+
+		// Aquí mi javascript
+		
+		$this->load->view('Commons/body_close_view');
+	}
+
+	public function actualiza_taller()
+	{
+		$valores = array(
+			'nombre'	=>	$this->input->post('nombre'),
+			'tipo'		=>	$this->input->post('tipo'),
+			'lugar'		=>	$this->input->post('lugar'),
+			'hora'		=>	$this->input->post('hora'),
+			'fecha'		=>	$this->input->post('fecha'),
+			'email'		=>	$this->input->post('correo'),
+			'cupo'		=>	$this->input->post('cupo'),
+		);
+
+		$this->General_model->update('talleres', array('id_taller'=>$this->input->post('id')), $valores);
+		redirect(base_url('formulario/3'));
+	}
+
+	public function recupera_taller()
+	{
+		$id = $this->input->post('id_taller');
+		$talleres = $this->General_model->get('talleres', array('id_taller'=>$id), array(), '');
+		$taller = ($talleres!=false)? $talleres->row(0) : false;
+		echo json_encode($taller);
+	}
+
+	public function actualiza_taller_asincrono()
+	{
+		$valores = array(
+			'nombre'	=>	$this->input->post('nombre'),
+			'tipo'		=>	$this->input->post('tipo'),
+			'lugar'		=>	$this->input->post('lugar'),
+			'hora'		=>	$this->input->post('hora'),
+			'fecha'		=>	$this->input->post('fecha'),
+			'email'		=>	$this->input->post('email'),
+			'cupo'		=>	$this->input->post('cupo'),
+		);
+		$this->General_model->update('talleres', array('id_taller'=>$this->input->post('id')), $valores);
 	}
 }

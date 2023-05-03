@@ -55,8 +55,11 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['bienvenida']    = 'Taller/primer_vista';
 $route['agregar']       = 'Taller/agregar_taller';
-$route['form']       = 'Taller/formulario';
-$route['form/(:num)']       = 'Taller/formulario';
-$route['save_form']       = 'Taller/guardar_formulario';
-$route['delete']       = 'Taller/borrar_taller';
-$route['delete/(:any)']       = 'Taller/borrar_taller';
+$route['formulario']    = 'Taller/formulario';
+$route['formulario/(:num)']  = 'Taller/formulario';
+$route['guardar']       = 'Taller/guardar_formulario';
+$route['borrar/(:any)'] = 'Taller/borrar_taller';
+$route['actualizar/(:any)'] = 'Taller/actualizar_taller';
+$route['actualiza']     = 'Taller/actualiza_taller';
+$route['recupera_taller']  = 'Taller/recupera_taller';
+$route['actualiza_taller'] = 'Taller/actualiza_taller_asincrono';

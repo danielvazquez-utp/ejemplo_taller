@@ -1,28 +1,30 @@
 <script>
     $(function(){
+
         const edicion = <?php echo $edicion ?>;
-        //alert(edicion);
-        let mensaje='';
-        if(edicion>0){
+        let mensaje = '';
+        if (edicion>0) {
             switch (edicion) {
                 case 1:
-                    mensaje="Taller agregado";
+                    mensaje = "Taller agregado";
                     break;
                 case 2:
-                    mensaje="Taller eliminado";
+                    mensaje = "Taller eliminado";
                     break;
-            
-                default:
+                case 3:
+                    mensaje = "Taller actualizado";
                     break;
             }
+            //alert(edicion);
             Swal.fire({
             position: 'center',
             icon: 'success',
             title: mensaje,
             showConfirmButton: false,
             timer: 1500
-            });
+            })
         }
-        
+
+
     });
 </script>
