@@ -110,10 +110,11 @@
             </thead>
             <tbody class="text-center">
               <?php
-              if ($talleres!=false) { 
+              
+              if ($talleres!=false) {
                 foreach ($talleres->result() as $taller) {
                   ?>
-                  <tr>
+                  <tr id="r_<?php echo $taller->id_taller ?>">
                     <td><?php echo $taller->id_taller ?></td>
                     <td><?php echo $taller->nombre ?></td>
                     <td><?php echo $taller->fecha ?></td>

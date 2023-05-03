@@ -151,4 +151,26 @@ class Taller extends CI_Controller {
 		$this->General_model->update('talleres', array('id_taller'=>$this->input->post('id')), $valores);
 		redirect(base_url('formulario/3'));
 	}
+
+	public function recupera_taller()
+	{
+		$id = $this->input->post('id_taller');
+		$talleres = $this->General_model->get('talleres', array('id_taller'=>$id), array(), '');
+		$taller = ($talleres!=false)? $talleres->row(0) : false;
+		echo json_encode($taller);
+	}
+
+	public function actualiza_taller_asincrono()
+	{
+		$valores = array(
+			'nombre'	=>	$this->input->post('nombre'),
+			'tipo'		=>	$this->input->post('tipo'),
+			'lugar'		=>	$this->input->post('lugar'),
+			'hora'		=>	$this->input->post('hora'),
+			'fecha'		=>	$this->input->post('fecha'),
+			'email'		=>	$this->input->post('email'),
+			'cupo'		=>	$this->input->post('cupo'),
+		);
+		$this->General_model->update('talleres', array('id_taller'=>$this->input->post('id')), $valores);
+	}
 }
