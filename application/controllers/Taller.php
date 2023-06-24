@@ -73,20 +73,6 @@ class Taller extends CI_Controller {
 		$this->load->view('Commons/body_close_view');
 	}
 
-	public function logIn(){
-		$this->load->view('Commons/head_view');
-		$this->load->view('Commons/body_open_view');
-		$this->load->view('Commons/wrapper_open_view');
-		$this->load->view('Commons/navbar_view');
-
-		$this->load->view('Taller/login_view');
-
-		$this->load->view('Commons/footer_view');
-		$this->load->view('Commons/wrapper_close_view');
-		$this->load->view('Commons/javascript_view');
-		$this->load->view('Commons/body_close_view');
-	}
-
 	public function guardar_formulario()
 	{
 		foreach ($_POST as $key => $value) {
@@ -186,5 +172,92 @@ class Taller extends CI_Controller {
 			'cupo'		=>	$this->input->post('cupo'),
 		);
 		$this->General_model->update('talleres', array('id_taller'=>$this->input->post('id')), $valores);
+	}
+	//proyecto del pase de lista
+	public function logIn(){
+		$this->load->view('Commons/head_view');
+		$this->load->view('Commons/body_open_view');
+		$this->load->view('Commons/wrapper_open_view');
+		$this->load->view('Commons/navbar_view');
+
+		$this->load->view('Taller/login_view');
+
+		$this->load->view('Commons/footer_view');
+		$this->load->view('Commons/wrapper_close_view');
+		$this->load->view('Commons/javascript_view');
+		$this->load->view('Commons/body_close_view');
+	}
+	public function logeo(){
+		$user= $this->input->post('user');
+		$password=$this->input->post('password');
+		$usuarios=$this->General_model->get('usuarios', array('usuario'=>$user, 'password'=>$password), array(), '');
+		$usuario = ($usuarios!=false)? $usuarios->row(0): false;
+		if($usuario=!false){
+			redirect(base_url('home'));
+		}else{
+			redirect(base_url('log'));
+		}
+	}
+	public function homeSys(){
+		$this->load->view('Commons/head_view');
+		$this->load->view('Commons/body_open_view');
+		$this->load->view('Commons/wrapper_open_view');
+		$this->load->view('Commons/navbar_view');
+		$this->load->view('Commons/main_side_bar_view');
+	
+		$this->load->view('Taller/home_view.php');
+
+		$this->load->view('Commons/footer_view');
+		$this->load->view('Commons/wrapper_close_view');
+		$this->load->view('Commons/javascript_view');
+		$this->load->view('Commons/body_close_view');
+	}
+	public function newClass(){
+		$this->load->view('Commons/head_view');
+		$this->load->view('Commons/body_open_view');
+		$this->load->view('Commons/wrapper_open_view');
+		$this->load->view('Commons/navbar_view');
+		$this->load->view('Commons/main_side_bar_view');
+	
+		$this->load->view('Taller/addClass_view.php');
+
+		$this->load->view('Commons/footer_view');
+		$this->load->view('Commons/wrapper_close_view');
+		$this->load->view('Commons/javascript_view');
+		$this->load->view('Commons/body_close_view');
+	}
+	public function saveClass(){
+		$valores = array(
+			'materia'	=>	$this->input->post('nombre'),
+			'grupo'		=>	$this->input->post('grupo'),
+			'grado'		=>	$this->input->post('grado'),
+			'division'		=>	$this->input->post('division'),
+			'carrera'		=>	$this->input->post('carrera'),
+			'turno'		=>	$this->input->post('turno'),
+		);
+
+		$this->General_model->set('clases', $valores);
+		redirect(base_url('classExisting'));
+	}
+	public function clasesExistentes(){
+
+		$clases=$this->General_model->get('clases',array(), array(), '');
+
+		$data = array(
+			'clases' => $clases,
+		);
+
+		$this->load->view('Commons/head_view');
+		$this->load->view('Commons/body_open_view');
+		$this->load->view('Commons/wrapper_open_view');
+		$this->load->view('Commons/navbar_view');
+		$this->load->view('Commons/main_side_bar_view');
+	
+		$this->load->view('Taller/clasesExistentes_view.php', $data);
+
+		$this->load->view('Commons/footer_view');
+		$this->load->view('Commons/wrapper_close_view');
+		$this->load->view('Commons/javascript_view');
+		$this->load->view('Commons/body_close_view');
 	}
 }
